@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output , EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-users',
@@ -6,11 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./users.component.css'],
 })
 export class UsersComponent implements OnInit {
-  constructor() {}
 
-  ngOnInit(): void {}
 
-  users = [
+  id:number;
+  name:String
+  test:string = 'hung';
+  @Output() childData = new EventEmitter;
+
+   users = [
     {
       id: 1,
       name: 'asd',
@@ -21,6 +24,11 @@ export class UsersComponent implements OnInit {
     },
   ];
 
+
+  ngOnInit(): void {}
+
+
+
   deleteUser(id: number) {
     for (let index = 0; index < this.users.length; index++) {
       if (this.users[index].id == id) {
@@ -28,4 +36,13 @@ export class UsersComponent implements OnInit {
       }
     }
   }
+
+  // createUser(){
+  // }
+
+  fromChild(){
+    this.childData.emit(this.test);
+  }
 }
+
+
