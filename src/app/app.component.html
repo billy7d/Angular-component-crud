@@ -1,1 +1,67 @@
-<app-users></app-users>
+ <!-- <h2>Today article</h2>
+
+<div>
+  <a href="{{article.url}}" target="_blank">{{article.title}}</a>
+
+</div>
+
+
+
+<br>
+
+
+<div *ngFor="let article of articles">
+  <a href="{{article.url}}" target="_blank">{{article.title}}</a>
+<br>
+  <textarea [arc]="article.title" cols="70" id="article-title"></textarea><br>
+
+  <input (click)="updateArticle()" type="button" value="Update">
+</div>
+
+
+<div *ngFor="let art of articles">
+  <a href="{{art.url}}" target="_blank">{{art.title}}</a>
+  <likes></likes>
+</div>
+
+
+
+
+ <h1>parent component </h1>
+
+
+  <label for="fname">First name:</label><br>
+  <input type="text" id="fname" [(ngModel)]="firstName" name="fname" ><br>
+
+  <label for="lname">Last name:</label><br>
+  <input type="text" id="lname" [(ngModel)]="lastName" name="lname"><br><br>
+
+  <input type="submit" (click)="saveData()" value="Submit">
+
+
+<table border ="1">
+  <tr>
+    <th>FN</th>
+    <th>LN</th>
+
+  </tr>
+  <tr *ngFor="let info of information">
+    <td>{{info.fn}}</td>
+    <td>{{info.ln}}</td>
+
+  </tr>
+
+</table>
+
+ -->
+
+ <!-- <app-progress-bar width="65"></app-progress-bar> -->
+
+
+ <app-users (usersToSend)="receiveFromChild($event)" [usersFromParent]="dataSendToChild"></app-users>
+ <ul *ngFor="let info of information">
+  <li >{{info.firstName}}</li>
+  <li >{{info.lastName}}</li>
+</ul>
+
+

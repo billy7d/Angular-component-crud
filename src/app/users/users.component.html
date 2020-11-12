@@ -1,15 +1,47 @@
 <p>users works!</p>
 
-<table border="1">
+
+<form action="/action_page.php">
+  <label for="fname">First name:</label><br>
+  <input type="text" id="fname" name="fname" [(ngModel)]="firstName"><br>
+  <label for="lname">Last name:</label><br>
+  <input type="text" id="lname" name="lname" [(ngModel)]="lastName"><br><br>
+  <input type="submit" (click)="addUser()" value="Submit">
+</form>
+
+
+
+<table border="1" class="table-light">
 
 <tr>
-  <th>id</th>
-  <th>name</th>
-  <th>delete</th>
+  <th>first name</th>
+  <th>last name</th>
+
 </tr>
 <tr *ngFor="let u of users">
-  <td>{{u.id}}</td>
-  <td>{{u.name}}</td>
+  <td>{{u.firstName}}</td>
+  <td>{{u.lastName}}</td>
   <td><button (click)="deleteUser(u.id)">Delete</button></td>
 </tr>
 </table>
+
+<form>
+  <button (click)="sendToParent()">Add to parent list</button>
+</form>
+
+
+
+<h3>data users from parent</h3>
+<table border="1">
+
+  <tr>
+    <th>first name</th>
+    <th>last name</th>
+
+  </tr>
+  <tr *ngFor="let u of usersFromParent">
+    <td>{{u.firstName}}</td>
+    <td>{{u.lastName}}</td>
+    <td><button (click)="deleteUser(u.id)">Delete</button></td>
+  </tr>
+  </table>
