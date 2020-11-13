@@ -1,10 +1,15 @@
+<<<<<<< HEAD
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+=======
+import { Component, OnInit, Output , EventEmitter } from '@angular/core';
+>>>>>>> 0b4afc611d072181a0cd477d76954f5938626cab
 
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.css'],
 })
+<<<<<<< HEAD
 export class UsersComponent  {
 
   @Output() usersToSend = new EventEmitter;
@@ -25,6 +30,31 @@ export class UsersComponent  {
     };
     this.users.push(user);
   };
+=======
+export class UsersComponent implements OnInit {
+
+
+  id:number;
+  name:String
+  test:string = 'hung';
+  @Output() childData = new EventEmitter;
+
+   users = [
+    {
+      id: 1,
+      name: 'asd',
+    },
+    {
+      id: 2,
+      name: 'hung',
+    },
+  ];
+>>>>>>> 0b4afc611d072181a0cd477d76954f5938626cab
+
+
+  ngOnInit(): void {}
+
+
 
   deleteUser(id: number) {
     for (let index = 0; index < this.users.length; index++) {
@@ -37,4 +67,13 @@ export class UsersComponent  {
   sendToParent(){
     this.usersToSend.emit(this.users);
   }
+
+  // createUser(){
+  // }
+
+  fromChild(){
+    this.childData.emit(this.test);
+  }
 }
+
+

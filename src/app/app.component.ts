@@ -7,6 +7,7 @@ import { stringify } from 'querystring';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
+<<<<<<< HEAD
 
 
   // article = {
@@ -74,4 +75,12 @@ export class AppComponent {
 
 
 
+=======
+  title = 'angular-test';
+
+  outputChildData(name: string){
+    console.log('Hello' + name);
+
+  }
+>>>>>>> 0b4afc611d072181a0cd477d76954f5938626cab
 }
